@@ -1,0 +1,17 @@
+{
+  "tags": ["HealthCheck"],
+  "description": "Healthcheck endpoint to check if service is running.",
+  "response":{
+  "200": {
+    "type": "object",
+    "properties": {
+      "status": {
+        "type": "string"
+      },
+      "timestamp": {
+        "type": "string",
+        "format": "date-time"
+      }
+    }
+  }
+}}

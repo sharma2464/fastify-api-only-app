@@ -1,7 +1,13 @@
 'use strict'
+const rootSchema = require('./root.json')
 
 module.exports = async function (fastify, opts) {
-  fastify.get('/', async function (request, reply) {
-    return { root: true }
+  fastify.route({
+    method: 'GET',
+    url: '/',
+    schema: rootSchema,
+    handler: async (request, reply) => {
+      reply.send({status: 'ok', timestamp: new Date().toISOString()})
+    }
   })
 }

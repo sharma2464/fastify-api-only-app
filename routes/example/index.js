@@ -1,7 +1,11 @@
 'use strict'
 
 module.exports = async function (fastify, opts) {
-  fastify.get('/', async function (request, reply) {
-    return 'this is an example'
+  fastify.route({
+    method: 'GET',
+    url: '/',
+    handler: async (request, reply) => {
+      reply.send({status: 200, message: "EXAMPLE OK"})
+    }
   })
 }
